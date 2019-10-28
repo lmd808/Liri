@@ -33,7 +33,7 @@ function callCommands(command, search) {
 			concertThis(search);
 			break;
 		case 'spotify-this-song':
-			spotifyThisSong(search);
+			spotifyThis(search);
 			break;
 		case 'movie-this':
 			movieThis(search);
@@ -59,6 +59,36 @@ function concertThis(search) {
 			}
 		})
 		.catch((error) => {
+			console.log(error);
+		});
+}
+
+// movie this command function
+function movieThis(search) {
+	let movieQueryURL = 'http://www.omdbapi.com/?t=' + search + '&y=&plot=short&apikey=trilogy';
+
+	axios
+		.get(movieQueryURL)
+		.then(function(response) {
+			if (response.data.Response === 'False') {
+				console.log(
+					"If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/"
+				);
+				console.log("It's on Netflix!");
+			} else {
+				console.log('--------------------------------------------------------------------------------');
+				console.log('Title: ' + response.data.Title);
+				console.log('Year: ' + response.data.Year);
+				console.log('IMDB Rating: ' + response.data.imdbRating);
+				console.log('Rotten Tomatoes: ' + response.data.Ratings[1].Value);
+				console.log('Country: ' + response.data.Country);
+				console.log('Language: ' + response.data.Language);
+				console.log('Plot: ' + response.data.Plot);
+				console.log('Actors: ' + response.data.Actors);
+				console.log('--------------------------------------------------------------------------------');
+			}
+		})
+		.catch(function(error) {
 			console.log(error);
 		});
 }
