@@ -12,46 +12,54 @@ var moment = require('moment');
 // create spotify variable for working key
 var spotify = new Spotify(keys.spotify);
 
-// write into txt file
+// variables to hold input
+var args = process.argv;
+var command = process.argv[2];
+var search = '';
 
-function writeToTxt(obj) {
-	fs.writeFile('log.json', JSON.stringify(obj), function(error) {
-		if (error) {
+// use for loop to rereive all the items one needs
+
+for (let i = 3; i < args.length; i++) {
+	if (1 > 3 && i < args.length) {
+		search = `${search}+${args[i]}`;
+	} else {
+		search += args[i];
+	}
+}
+
+function callCommands(command, search) {
+	switch (command) {
+		case 'concert-this':
+			concertThis(search);
+			break;
+		case 'spotify-this-song':
+			spotifyThisSong(search);
+			break;
+		case 'movie-this':
+			movieThis(search);
+			break;
+		case 'do-what-it-says':
+			doWhatItSays();
+			break;
+	}
+}
+
+// concert-this command
+function concertThis(search) {
+	var url = 'https://rest.bandsintown.com/artists/' + search + '/events?app_id=codingbootcamp';
+
+	axios
+		.get(url)
+		.then((response) => {
+			for (var i = 0; i < 10; i++) {
+				console.log('--------------------------------------------------------------------------------');
+				console.log('Venue: ' + response.data[i].venue.name);
+				console.log('Location: ' + response.data[i].venue.city + ', ' + response.data[i].venue.country);
+				console.log('Date: ' + moment(response.data[i].datetime).format('MM/DD/YYYY'));
+			}
+		})
+		.catch((error) => {
 			console.log(error);
-		}
-	});
+		});
 }
-
-// create function and then reformat the functions as an object
-
-// set variable to line Command
-
-var lineCommand = process.argv[2];
-
-// four line commands
-switch (lineCommand) {
-	case 'concert-this':
-		concertThis();
-		break;
-	case 'spotify-this-song':
-		// call function
-		break;
-	case 'movie-this':
-		// call function
-		break;
-	case 'do-what-it-says':
-		// call function
-		break;
-}
-
-// concert.this command
-
-function concertThis() {
-	var artist = lineCommand;
-	var queryURL = 'https://rest.bandsintown.com/artists/' + artist + '/events?app_id=codingbootcamp';
-
-	axios.get(queryURL).then((response) => {
-		var events = response.data;
-		console.log(events);
-	});
-}
+callCommands(command, search);
