@@ -1,7 +1,7 @@
 // require components from my .env file
 require('dotenv').config();
 // require spotify
-var Spotify = require('spotify-web-api-node');
+var Spotify = require('node-spotify-api');
 // require keys.js file
 var keys = require('./keys.js');
 // require Axios
@@ -11,6 +11,7 @@ var fs = require('fs');
 var moment = require('moment');
 // create spotify variable for working key
 var spotify = new Spotify(keys.spotify);
+// var spotify = new Spotify(keys.spotify);
 
 // variables to hold input
 var args = process.argv;
@@ -63,6 +64,37 @@ function concertThis(search) {
 		});
 }
 
+// if spotify-this-song command
+function spotifyThis(search) {
+	if (search === undefined) {
+		// fuck this song
+		search = 'The Sign';
+	}
+	spotify.search(
+		{
+			type: 'track',
+			query: search
+		},
+		function(err, data) {
+			if (err) {
+				console.log('Error occurred: ' + err);
+				return;
+			}
+			var response = data.tracks.items;
+
+			for (var i = 0; i < response.length; i++) {
+				console.log('--------------------------------------------------------------------------------');
+				console.log(i);
+				console.log('Song name: ' + response[i].name);
+				console.log('Preview song: ' + response[i].preview_url);
+				console.log('Album: ' + response[i].album.name);
+				console.log('Artist(s): ' + response[i].artists[0].name);
+				console.log('--------------------------------------------------------------------------------');
+			}
+		}
+	);
+}
+
 // movie this command function
 function movieThis(search) {
 	let movieQueryURL = 'http://www.omdbapi.com/?t=' + search + '&y=&plot=short&apikey=trilogy';
@@ -92,4 +124,5 @@ function movieThis(search) {
 			console.log(error);
 		});
 }
+
 callCommands(command, search);

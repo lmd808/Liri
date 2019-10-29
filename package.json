@@ -24,6 +24,7 @@
     "jquery": "file:node_modules/jQuery",
     "jsdom": "^15.2.0",
     "moment": "^2.24.0",
+    "node-spotify-api": "^1.1.1",
     "spotify-web-api-node": "^4.0.0"
   }
 }
