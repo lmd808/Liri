@@ -21,6 +21,9 @@ var search = process.argv[3];
 
 function callCommands(command, search) {
 	switch (command) {
+		case 'start':
+			welcomeFunction();
+			break;
 		case 'help':
 			helpFunction();
 			break;
@@ -42,11 +45,18 @@ function callCommands(command, search) {
 	}
 }
 
+// welcome function
+function welcomeFunction() {
+	console.log('--------------------------------------------------------------------------------');
+	console.log(`Welcome to Liri!`);
+	helpFunction();
+}
+
 // help function
 function helpFunction() {
 	console.log('--------------------------------------------------------------------------------');
 	console.log(
-		`Liri takes four commands. 'concert-this', 'spotify-this-song' 'movie-this', and 'do-what-it-says'. These commands do not require quotations. However, their inputs do require quotations. For example: this-movie "It's a wonderful life".`
+		`Liri takes six commands. 'start', 'help', 'concert-this', 'spotify-this-song' 'movie-this', and 'do-what-it-says'. These commands do not require quotations. However, their inputs do require quotations. For example: this-movie "It's a wonderful life". Enter start or help to see these directions again.`
 	);
 	console.log('--------------------------------------------------------------------------------');
 }
@@ -116,14 +126,14 @@ function movieThis(search) {
 				console.log("It's on Netflix!");
 			} else {
 				console.log('--------------------------------------------------------------------------------');
-				console.log(`Title: ' + ${response.data.Title}`);
-				console.log('Year: ' + response.data.Year);
-				console.log('IMDB Rating: ' + response.data.imdbRating);
-				console.log('Rotten Tomatoes: ' + response.data.Ratings[1].Value);
-				console.log('Country: ' + response.data.Country);
-				console.log('Language: ' + response.data.Language);
-				console.log('Plot: ' + response.data.Plot);
-				console.log('Actors: ' + response.data.Actors);
+				console.log(`Title: ${response.data.Title}`);
+				console.log(`Year: ${response.data.Year}`);
+				console.log(`IMDB Rating: ${response.data.imdbRating}`);
+				console.log(`Rotten Tomatoes: ${response.data.Ratings[1].Value}`);
+				console.log(`Country: ${response.data.Country}`);
+				console.log(`Language: ${response.data.Language}`);
+				console.log(`Plot: ${response.data.Plot}`);
+				console.log(`Actors: ${response.data.Actors}`);
 				console.log('--------------------------------------------------------------------------------');
 			}
 		})

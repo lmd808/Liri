@@ -5,13 +5,13 @@ Liri will allow the user to look up bands, movies and music based on their user 
 
 # Structure
 
-This application takes in 4 commands and user input (ie. band names, songs, and movies). It used the commands to call specific functions in order to effectively gather data on the users input. 
+This application takes in 6 commands and user input (ie. band names, songs, and movies). It used the commands to call specific functions in order to effectively gather data on the users input. 
 
 # Tutorial: 
 
 ### Step one: 
 type in a command. They can be any of the following: 
-concert-this , spotify-this-song , movie-this , do-what-it-says 
+start, help, concert-this , spotify-this-song , movie-this , do-what-it-says 
 
 See images below: 
 concert-this command 
