@@ -125,4 +125,16 @@ function movieThis(search) {
 		});
 }
 
+// *****************************************************
+// do-what-it-says
+function doWhatItSays() {
+	fs.readFile('random.txt', 'utf8', function(err, data) {
+		if (err) {
+			return console.log(err);
+		}
+		var dataArr = data.split(',');
+		callCommands(dataArr[0], dataArr[1]);
+	});
+}
+
 callCommands(command, search);
