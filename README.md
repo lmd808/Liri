@@ -24,7 +24,7 @@ do-what-it-says command
 ![DOWHATCOMMAND] (https://github.com/lmd808/liri/blob/master/images/dowhatcommand.png)
 
 ### Step Two: 
-type in an input. The concert-this command take in a parameter of a band name or artist. The spotify-this-song  command takes in a parameter of a song. The movie-this command takes in a parameter of a movie title. Finally, the do-what-it-says command does not take a parameter. It will read the random.txt file. 
+type in an input. The concert-this command take in a parameter of a band name or artist. The spotify-this-song  command takes in a parameter of a song. The movie-this command takes in a parameter of a movie title. Finally, the do-what-it-says command does not take a parameter. It will read the random.txt file. NOTE: THE PARAMETERS MUST BE IN QUOTATIONS!!! 
 See Images Below: 
 
 concert-this command 
@@ -61,9 +61,4 @@ javascript, node.js, axios, node-spotify-api npm package, dotenv npm package, fs
 
 # Role 
 I am the creator of this application. 
-
-
-4. Include screenshots, gifs or videos of the app functioning
-5. Contain a link to a deployed version of the app
-6. Clearly list the technologies used in the app
 

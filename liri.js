@@ -14,19 +14,10 @@ var spotify = new Spotify(keys.spotify);
 // var spotify = new Spotify(keys.spotify);
 
 // variables to hold input
-// var args = process.argv;
 var command = process.argv[2];
 var search = process.argv[3];
 
 // use for loop to receive all the items one needs
-// this was useful until my tutor broke it
-// for (let i = 4; i <args.length; i++) {
-// 	if (1 > 3 && i < args.length) {
-// 		search = `${search}+${args[i]}`;
-// 	} else {
-// 		search += args[i];
-// 	}
-// }
 
 function callCommands(command, search) {
 	switch (command) {
@@ -53,9 +44,11 @@ function callCommands(command, search) {
 
 // help function
 function helpFunction() {
+	console.log('--------------------------------------------------------------------------------');
 	console.log(
-		`Liri takes four commands. 'concert-this', 'spotify-this-song' 'movie-this', and 'do-what-it-says'. These commands do not require quotations. However, their inputs do require quotations. For example: this-movie 'It's a wonderful life'.`
+		`Liri takes four commands. 'concert-this', 'spotify-this-song' 'movie-this', and 'do-what-it-says'. These commands do not require quotations. However, their inputs do require quotations. For example: this-movie "It's a wonderful life".`
 	);
+	console.log('--------------------------------------------------------------------------------');
 }
 
 // concert-this command
@@ -123,14 +116,14 @@ function movieThis(search) {
 				console.log("It's on Netflix!");
 			} else {
 				console.log('--------------------------------------------------------------------------------');
-				console.log(`Title: ${response.data.Title}`);
-				console.log(`Year: ${response.data.Year}`);
-				console.log(`IMDB Rating:${response.data.imdbRating}`);
-				console.log(`Rotten Tomatoes: ${response.data.Ratings[1].Value}`);
-				console.log(`Country: ${response.data.Country}`);
-				console.log(`Language: ' ${response.data.Language}`);
-				console.log(`Plot: ${response.data.Plot}`);
-				console.log(`Actors: ${response.data.Actors}`);
+				console.log(`Title: ' + ${response.data.Title}`);
+				console.log('Year: ' + response.data.Year);
+				console.log('IMDB Rating: ' + response.data.imdbRating);
+				console.log('Rotten Tomatoes: ' + response.data.Ratings[1].Value);
+				console.log('Country: ' + response.data.Country);
+				console.log('Language: ' + response.data.Language);
+				console.log('Plot: ' + response.data.Plot);
+				console.log('Actors: ' + response.data.Actors);
 				console.log('--------------------------------------------------------------------------------');
 			}
 		})
