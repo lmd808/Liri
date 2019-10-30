@@ -57,6 +57,7 @@ function concertThis(search) {
 				console.log('Venue: ' + response.data[i].venue.name);
 				console.log('Location: ' + response.data[i].venue.city + ', ' + response.data[i].venue.country);
 				console.log('Date: ' + moment(response.data[i].datetime).format('MM/DD/YYYY'));
+				console.log('--------------------------------------------------------------------------------');
 			}
 		})
 		.catch((error) => {
