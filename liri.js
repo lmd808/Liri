@@ -14,22 +14,25 @@ var spotify = new Spotify(keys.spotify);
 // var spotify = new Spotify(keys.spotify);
 
 // variables to hold input
-var args = process.argv;
+// var args = process.argv;
 var command = process.argv[2];
-var search = '';
+var search = process.argv[3];
 
-// use for loop to rereive all the items one needs
-
-for (let i = 3; i < args.length; i++) {
-	if (1 > 3 && i < args.length) {
-		search = `${search}+${args[i]}`;
-	} else {
-		search += args[i];
-	}
-}
+// use for loop to receive all the items one needs
+// this was useful until my tutor broke it
+// for (let i = 4; i <args.length; i++) {
+// 	if (1 > 3 && i < args.length) {
+// 		search = `${search}+${args[i]}`;
+// 	} else {
+// 		search += args[i];
+// 	}
+// }
 
 function callCommands(command, search) {
 	switch (command) {
+		case 'help':
+			helpFunction();
+			break;
 		case 'concert-this':
 			concertThis(search);
 			break;
@@ -42,7 +45,17 @@ function callCommands(command, search) {
 		case 'do-what-it-says':
 			doWhatItSays();
 			break;
+		default:
+			helpFunction();
+			break;
 	}
+}
+
+// help function
+function helpFunction() {
+	console.log(
+		`Liri takes four commands. 'concert-this', 'spotify-this-song' 'movie-this', and 'do-what-it-says'. These commands do not require quotations. However, their inputs do require quotations. For example: this-movie 'It's a wonderful life'.`
+	);
 }
 
 // concert-this command
@@ -54,9 +67,9 @@ function concertThis(search) {
 		.then((response) => {
 			for (var i = 0; i < 10; i++) {
 				console.log('--------------------------------------------------------------------------------');
-				console.log('Venue: ' + response.data[i].venue.name);
-				console.log('Location: ' + response.data[i].venue.city + ', ' + response.data[i].venue.country);
-				console.log('Date: ' + moment(response.data[i].datetime).format('MM/DD/YYYY'));
+				console.log(`Venue: ${response.data[i].venue.name}`);
+				console.log(`Location: ${response.data[i].venue.city}, ${response.data[i].venue.country}`);
+				console.log(`Date: ${moment(response.data[i].datetime).format('MM/DD/YYYY')}`);
 				console.log('--------------------------------------------------------------------------------');
 			}
 		})
@@ -86,10 +99,10 @@ function spotifyThis(search) {
 			for (var i = 0; i < response.length; i++) {
 				console.log('--------------------------------------------------------------------------------');
 				console.log(i);
-				console.log('Song name: ' + response[i].name);
-				console.log('Preview song: ' + response[i].preview_url);
-				console.log('Album: ' + response[i].album.name);
-				console.log('Artist(s): ' + response[i].artists[0].name);
+				console.log(`Song Name: ${response[i].name}`);
+				console.log(`Preview Song: ${response[i].preview_url}`);
+				console.log(`Album: ${response[i].album.name}`);
+				console.log(`Artist(s) ${response[i].artists[0].name}`);
 				console.log('--------------------------------------------------------------------------------');
 			}
 		}
@@ -110,14 +123,14 @@ function movieThis(search) {
 				console.log("It's on Netflix!");
 			} else {
 				console.log('--------------------------------------------------------------------------------');
-				console.log('Title: ' + response.data.Title);
-				console.log('Year: ' + response.data.Year);
-				console.log('IMDB Rating: ' + response.data.imdbRating);
-				console.log('Rotten Tomatoes: ' + response.data.Ratings[1].Value);
-				console.log('Country: ' + response.data.Country);
-				console.log('Language: ' + response.data.Language);
-				console.log('Plot: ' + response.data.Plot);
-				console.log('Actors: ' + response.data.Actors);
+				console.log(`Title: ${response.data.Title}`);
+				console.log(`Year: ${response.data.Year}`);
+				console.log(`IMDB Rating:${response.data.imdbRating}`);
+				console.log(`Rotten Tomatoes: ${response.data.Ratings[1].Value}`);
+				console.log(`Country: ${response.data.Country}`);
+				console.log(`Language: ' ${response.data.Language}`);
+				console.log(`Plot: ${response.data.Plot}`);
+				console.log(`Actors: ${response.data.Actors}`);
 				console.log('--------------------------------------------------------------------------------');
 			}
 		})
