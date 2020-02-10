@@ -10,44 +10,43 @@ This application takes in 6 commands and user input (ie. band names, songs, and 
 # Tutorial: 
 
 ### Step one: 
-type in a command. They can be any of the following: 
-start, help, concert-this , spotify-this-song , movie-this , do-what-it-says 
+* type in a command. They can be any of the following: 
+* start, help, concert-this , spotify-this-song , movie-this , do-what-it-says 
 
 See images below: 
 concert-this command 
-![CONCERTCOMMAND] (https://github.com/lmd808/liri/blob/master/images/concertcommand.png)
+![CONCERTCOMMAND](./images/concertcommand.png)
 spotify-this-song command 
-![SPOTIFYCOMMAND] (https://github.com/lmd808/liri/blob/master/images/spotifycommand.png)
+![SPOTIFYCOMMAND](./images/spotifycommand.png)
 movie-this command 
-![MOVIECOMMAND] (https://github.com/lmd808/liri/blob/master/images/moviethis.png)
+![MOVIECOMMAND](./images/moviethis.png)
 do-what-it-says command
-![DOWHATCOMMAND] (https://github.com/lmd808/liri/blob/master/images/dowhatcommand.png)
+![DOWHATCOMMAND](./liri/blob/master/images/dowhatcommand.png)
 
 ### Step Two: 
-type in an input. The concert-this command take in a parameter of a band name or artist. The spotify-this-song  command takes in a parameter of a song. The movie-this command takes in a parameter of a movie title. Finally, the do-what-it-says command does not take a parameter. It will read the random.txt file. NOTE: THE PARAMETERS MUST BE IN QUOTATIONS!!! 
-See Images Below: 
+* type in an input. The concert-this command take in a parameter of a band name or artist. The spotify-this-song  command takes in a parameter of a song. The movie-this command takes in a parameter of a movie title. Finally, the do-what-it-says command does not take a parameter. It will read the random.txt file. NOTE: THE PARAMETERS MUST BE IN QUOTATIONS!!! 
+#### See Images Below: 
 
-concert-this command 
-![CONCERTINPUT] (https://github.com/lmd808/liri/blob/master/images/concertthisoutput.png)
-
-spotify-this-song command 
-![SPOTIFYINPUT] (https://github.com/lmd808/liri/blob/master/images/spotifyparam.png)
-movie-this command 
-![MOVIEIPUT] (https://github.com/lmd808/liri/blob/master/images/movie%20command.png)
-do-what-it-says command
+* concert-this command 
+![CONCERTINPUT](./images/concertthisoutput.png)
+* spotify-this-song command 
+![SPOTIFYINPUT](./images/spotifyparam.png)
+* movie-this command 
+![MOVIEIPUT](./images/movie%20command.png)
+* do-what-it-says command
 NOT APPLICABLE 
 
 ### Step Three: 
-Press the enter key. It will return results for you based on your command and input. 
-See Images Below: 
-concert-this command 
-![CONCERTOUTPUT] (https://github.com/lmd808/liri/blob/master/images/concertthisoutput.png)
-spotify-this-song command 
-![SPOTIFYOUTPUT] (https://github.com/lmd808/liri/blob/master/images/spotifyoutput.png)
-movie-this command 
-![MOVIEOUTPUT] (https://github.com/lmd808/liri/blob/master/images/movieoutput.png)
-do-what-it-says command
-![DOWHATOUTPUT] (https://github.com/lmd808/liri/blob/master/images/dowhatoutput.png)
+* Press the enter key. It will return results for you based on your command and input. 
+#### See Images Below: 
+* concert-this command 
+![CONCERTOUTPUT](./images/concertthisoutput.png)
+* spotify-this-song command 
+![SPOTIFYOUTPUT](./images/spotifyoutput.png)
+* movie-this command 
+![MOVIEOUTPUT](./images/movieoutput.png)
+* do-what-it-says command
+![DOWHATOUTPUT](./images/dowhatoutput.png)
 
 
 ## Link to deployed version 
@@ -59,6 +58,6 @@ https://github.com/lmd808/liri
 ## Technologies 
 javascript, node.js, axios, node-spotify-api npm package, dotenv npm package, fs npm package, moment-js npm package 
 
-# Role 
-I am the creator of this application. 
+# Creator
+Laura DiTommaso [GitHub](https://github.com/lmd808)
 
