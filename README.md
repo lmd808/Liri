@@ -3,6 +3,19 @@
 # Problem 
 Liri will allow the user to look up bands, movies and music based on their user input. It will save the user time from having to look it up. 
 
+## Local Usage
+* Clone this repo to your computer
+* In the project directory, run `$npm install`
+* Edit `PORT` and `.env` configuration if necessary/desired 
+* Run `npm start` or `node app` to start your server and use this project on your own
+
+## Technologies: 
+* [Javascript](https://www.javascript.com/) - The scripting language used to manipulate the DOM. 
+* [Node](https://nodejs.org/en) - Javascript run-time environment (used to execute server side code.)
+* [Axios](https://www.npmjs.com/package/axios) - Promise based HTTP client for the browser and node.js
+* [Spotify API](https://www.npmjs.com/package/node-spotify-api) - A simple to use API library for the Spotify REST API.
+
+
 # Structure
 
 This application takes in 6 commands and user input (ie. band names, songs, and movies). It used the commands to call specific functions in order to effectively gather data on the users input. 
@@ -50,13 +63,15 @@ NOT APPLICABLE
 
 
 ## Link to deployed version 
-https://lmd808.github.io/liri/
+[Will only Display the ReadMe](https://lmd808.github.io/liri/)
 
 ## Link to Repo: 
-https://github.com/lmd808/liri 
+[Repo](https://github.com/lmd808/liri) 
 
 ## Technologies 
 javascript, node.js, axios, node-spotify-api npm package, dotenv npm package, fs npm package, moment-js npm package 
+
+
 
 # Creator
 Laura DiTommaso [GitHub](https://github.com/lmd808)
