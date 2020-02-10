@@ -68,11 +68,6 @@ NOT APPLICABLE
 ## Link to Repo: 
 [Repo](https://github.com/lmd808/liri) 
 
-## Technologies 
-javascript, node.js, axios, node-spotify-api npm package, dotenv npm package, fs npm package, moment-js npm package 
-
-
-
 # Creator
 Laura DiTommaso [GitHub](https://github.com/lmd808)
 
