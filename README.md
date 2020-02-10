@@ -1,6 +1,6 @@
 # liri
 
-# Problem 
+## Problem 
 Liri will allow the user to look up bands, movies and music based on their user input. It will save the user time from having to look it up. 
 
 ## Local Usage
@@ -16,11 +16,11 @@ Liri will allow the user to look up bands, movies and music based on their user 
 * [Spotify API](https://www.npmjs.com/package/node-spotify-api) - A simple to use API library for the Spotify REST API.
 
 
-# Structure
+## Structure
 
 This application takes in 6 commands and user input (ie. band names, songs, and movies). It used the commands to call specific functions in order to effectively gather data on the users input. 
 
-# Tutorial: 
+## Tutorial: 
 
 ### Step one: 
 * type in a command. They can be any of the following: 
@@ -68,6 +68,6 @@ NOT APPLICABLE
 ## Link to Repo: 
 [Repo](https://github.com/lmd808/liri) 
 
-# Creator
+## Creator
 Laura DiTommaso [GitHub](https://github.com/lmd808)
 
